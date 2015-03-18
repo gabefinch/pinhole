@@ -1,9 +1,17 @@
-<h1>Log In</h1>
-
-<%=form_tag log_in_path do%>
-<%=label_tag :email %>
-<%=text_field_tag :email %>
-<%=label_tag :password %>
-<%=password_field_tag :password %>
-<%=submit_tag "Log in" %>
-<%end%>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 well">
+    <div class="page-header">
+      <h1>Log In</h1>
+    </div>
+    <%= form_tag log_in_path, class: "form-group" do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, "", class: "form-control" %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, "", class: "form-control"  %>
+    <br>
+    <%= submit_tag "Log in", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

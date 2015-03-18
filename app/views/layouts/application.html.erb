@@ -7,10 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="#">Pinhole</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <% if session[:user_id] == nil %>
+            <li><%= link_to 'Log in', log_in_path %></li>
+            <li><%= link_to 'Register', new_user_path %></li>
+          <% else %>
+            <li><%= link_to 'Log out', log_out_path %></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a><%= current_user.email %></a></li>
+          <% end%>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container">
 <%= flash[:alert] %>
 <%= flash[:notice] %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
