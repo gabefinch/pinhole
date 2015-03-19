@@ -1,1 +1,9 @@
 
+<% @users.each do |user| %>
+  <div class="well">
+    <% if user.avatar_file_name %>
+      <img src="<%= user.avatar %>" alt="avatar" class="avatar" />
+    <% end %>
+    <span id='email'><%= user.email %></span>
+  </div>
+<% end %>

@@ -23,6 +23,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
+            <li><a><%= image_tag current_user.avatar.url(:thumb), class: "navatar" %></a></li>
             <li><a><%= current_user.email %></a></li>
           <% end%>
         </ul>
