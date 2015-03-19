@@ -1,0 +1,11 @@
+<h2>Library of <%= @book.user.email %></h2>
+<h3><%= @book.name %></h3>
+<h6><%= @book.author %></h6>
+<img src="<%= @book.photo %>" alt="bookcover" />
+Likes:<%= @book.likes.count %>
+
+
+<%=form_for([@book, Like.new]) do |f| %>
+  <%=f.hidden_field :book_id, :value => @book.id %>
+  <%=f.submit "Like", class: "btn btn-success"  %>
+<% end %>

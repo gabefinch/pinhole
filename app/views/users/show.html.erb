@@ -1,0 +1,9 @@
+<h2>Library of <%= @user.email %><img src="<%= @user.avatar %>" alt="" class="navatar"/></h2>
+<ul>
+  <% @user.books.each do |book| %>
+  <li><h6><%= book.name %></h6>
+  <%= book.author %>
+  <br>
+  <a href="/books/<%= book.id %>"><img src="<%= book.photo %>" alt="bookcover" /></a></li>
+  <% end %>
+</ul>
